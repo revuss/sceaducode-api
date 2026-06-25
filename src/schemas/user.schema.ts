@@ -35,12 +35,11 @@ export class User {
   })
   provider!: AuthProvider;
 
-  @Prop({
-    default: null,
-  })
+  @Prop({ type: String, default: null })
   providerId!: string | null;
 
   @Prop({
+    type: String,
     default: null,
   })
   avatar!: string | null;
@@ -58,19 +57,34 @@ export class User {
   roles!: UserRole[];
 
   @Prop({
+    type: String,
     default: null,
   })
   refreshToken!: string | null;
 
   @Prop({
+    type: String,
     default: null,
   })
   accessToken!: string | null;
 
   @Prop({
+    type: Date,
     default: null,
   })
   lastLoginAt!: Date | null;
+
+  @Prop({
+    type: Boolean,
+    default: false,
+  })
+  isDeleted!: boolean;
+
+  @Prop({
+    type: Boolean,
+    default: true,
+  })
+  isActive!: boolean;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
