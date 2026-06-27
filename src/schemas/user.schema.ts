@@ -50,23 +50,17 @@ export class User {
   isEmailVerified!: boolean;
 
   @Prop({
-    type: [String],
+    type: String,
     enum: UserRole,
-    default: [UserRole.STUDENT],
+    default: UserRole.STUDENT,
   })
-  roles!: UserRole[];
+  role!: UserRole;
 
   @Prop({
     type: String,
     default: null,
   })
   refreshToken!: string | null;
-
-  @Prop({
-    type: String,
-    default: null,
-  })
-  accessToken!: string | null;
 
   @Prop({
     type: Date,

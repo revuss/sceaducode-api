@@ -7,6 +7,7 @@ import { AppService } from './app.service';
 import { GlobalProviders } from './providers/global-providers';
 import { DatabaseConfig } from './config/database.config';
 import { ConfigModule } from '@nestjs/config';
+import { AuthCookieService } from './modules/auth-cookie/auth-cookie.service';
 
 @Module({
   imports: [
@@ -19,6 +20,6 @@ import { ConfigModule } from '@nestjs/config';
     UsersModule,
   ],
   controllers: [AppController],
-  providers: [AppService, ...GlobalProviders],
+  providers: [AppService, ...GlobalProviders, AuthCookieService],
 })
 export class AppModule {}

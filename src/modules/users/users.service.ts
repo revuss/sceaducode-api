@@ -24,6 +24,7 @@ export class UsersService {
       lastName: data.lastName,
       email: data.email,
       password: hashedPassword,
+      role: data.role,
     });
     return user;
   }
